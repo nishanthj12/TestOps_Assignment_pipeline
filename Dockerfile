@@ -1,5 +1,5 @@
-FROM oraclelinux:8.10
-RUN yum update
-RUN yum install httpd
+FROM ubuntu
+RUN apt update
+RUN apt install apache2 -y
 ENTRYPOINT apachectl -D FOREGROUND
-ADD .var/www/html
+ADD . var/www/html
